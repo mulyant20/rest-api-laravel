@@ -27,7 +27,7 @@ class QuoteController extends Controller
      */
     public function store(StoreQuoteRequest $request)
     {
-        return response()->json('hello');
+        return new QuoteResource(Quote::create($request->validate()));
     }
 
     /**
