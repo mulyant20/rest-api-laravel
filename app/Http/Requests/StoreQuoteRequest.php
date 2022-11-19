@@ -25,7 +25,7 @@ class StoreQuoteRequest extends FormRequest
     {
         return [
             'text' => 'required|min:20',
-            'author' => 'required|min:10'
+            'author' => 'required|min:5'
         ];
     }
 }
