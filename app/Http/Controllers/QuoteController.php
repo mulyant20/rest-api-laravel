@@ -15,7 +15,7 @@ class QuoteController extends Controller
      */
     public function index()
     {
-        return QuoteResource::collection(Quote::all());
+        return QuoteResource::collection(Quote::paginate(10));
     }
 
     /**
