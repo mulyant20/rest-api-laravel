@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Http\Resources\QuoteResource;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // only quote resource
+        QuoteResource::withoutWrapping();
+
+        // or all json resource
+        JsonResource::withoutWrapping();
     }
 }
