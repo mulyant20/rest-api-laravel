@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\QuoteResource;
 use App\Models\Quote;
 use Illuminate\Http\Request;
 
@@ -36,8 +37,9 @@ class QuoteController extends Controller
      */
     public function show(Quote $quote)
     {
-        //
+        return new QuoteResource($quote);
     }
+
 
     /**
      * Update the specified resource in storage.
